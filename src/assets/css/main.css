@@ -53,6 +53,11 @@ header nav ul {
 }
 header nav ul li{
     padding-right: 10px !important;
+    transition: .4s all ease-in-out;
+    cursor: pointer;
+}
+header nav ul li:hover{
+    letter-spacing: 5px;
 }
 header nav ul li:last-child{
     padding-right: 0 !important;
@@ -86,8 +91,12 @@ header .burgBtn{
     padding: 0 !important;
 }
 .menuActive li{
-    padding-bottom: 1% !important;
-    padding-right: 0 !important;
+    padding: 2% 0!important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #fff;
 }
 .menuActive li:last-child{
     padding-bottom: 0 !important;
@@ -113,6 +122,12 @@ header .btn{
     border: 2px solid #fff;
     border-radius: 7px;
     padding: 5px 10px;
+    transition: .5s all ease-in-out;
+    cursor: pointer;
+}
+header .btn:hover{
+    background: #fff;
+    color: #000;
 }
 section{
     padding: 5% 0;
@@ -122,10 +137,15 @@ section .sectionTitle{
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
 }
+section .description{
+    font-size: 1.3em;
+    text-align: center;
+}
 section .sectionTitle h2{
     font-weight: normal !important;
-    font-size: 25px !important;
+    font-size: 30px !important;
     margin:  10px 0 ;
+    text-align: center;
 }
 section .sectionTitle::after{
     content: '';
@@ -146,9 +166,6 @@ section .sectionTitle::after{
     justify-content: center;
     margin-bottom: 2% !important;
 }
-.Services .services .service:last-child{
-    margin: 0 !important;
-}
 .services .service .img{
     display: flex;
     justify-content: center;
@@ -164,13 +181,16 @@ section .sectionTitle::after{
     font-size: 1.5em;
     color: #e41212;
 }
+.services .title h3{
+    font-size: 1.3em;
+}
 .services .service .img .another{
     background: #e41212;
     color: #fff !important;
 }
 
 .Services .services .service .description{
-    font-size: 15px;
+    font-size: 1.2em;
 }
 .Services .services{
     display: flex;
@@ -183,6 +203,75 @@ section .sectionTitle::after{
 .services .service .title{
     text-transform: uppercase;
 }
+.about{
+    background-color: #f8f8f8;
+}
+.about .aboutTeam{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.about .aboutTeam .col1, .about .aboutTeam .col2{
+    width: 45%;
+}
+.about .aboutTeam .col1 p, .about .aboutTeam .col2 p{
+    margin: 0 !important;
+}
+.about .slider{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    position: relative;
+}
+.about .slider .slide{
+    min-width: 150px;
+    height: 200px;
+    background: #000;
+    margin-right: 2% !important;
+}
+.about .slider .slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+    object-position: top;
+}
+.about .slider .slide figure{
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+}
+.about .slider .left, .about .slider .right{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #8f8f8f;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+}
+.about .slider .right:hover{
+    background: #c0301c;
+}.about .slider .left:hover{
+    background: #c0301c;
+}
+.about .slider .left{
+    left: 2px;
+}
+.about .slider .right{
+   right: 2%;
+}
+.about .slider i{
+    margin: 0 !important;
+}
+
 
 
 
@@ -196,10 +285,37 @@ section .sectionTitle::after{
     .burgBtn{
         display: block !important;
     }
+    .slW750px{
+        display: none !important;
+    }
 }
 @media screen and (max-width: 520px){
     header .information .title{
         font-size: .7em;
+    }
+    .slW520px{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px){
+    .about .aboutTeam{
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+    .about .aboutTeam .col1{
+        margin-bottom: 3% !important;
+    }
+    .about .aboutTeam .col1, .about .aboutTeam .col2{
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width: 418px){
+    .services .service{
+        width: 100% !important;
+    }
+    .slW418px{
+        display: none;
     }
 }
 
