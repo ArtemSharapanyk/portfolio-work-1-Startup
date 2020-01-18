@@ -8,7 +8,12 @@
 a{
     text-decoration: none !important;
 }
-
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 header {
     height: 100vh;
     width: 100%;
@@ -16,7 +21,7 @@ header {
     background-attachment: fixed;
     color: #ffffff !important;
     background-size: cover;
-    
+    overflow: hidden;
 }
 .wrapper{
     max-width: 1200px;
@@ -50,11 +55,15 @@ header nav ul li{
     padding-right: 10px !important;
 }
 header nav ul li:last-child{
-    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 ul li{
     list-style: none;
 } 
+ul{
+    margin: 0 !important;
+    padding: 0 !important;
+}
 header .burgBtn{
     display: none;
     font-size: 40px;
@@ -100,16 +109,89 @@ header .information .description  p{
     font-size: 1.3em;
 }
 header .btn{
-    font-size: 1.5em;
+    font-size: 1.2em;
     border: 2px solid #fff;
-    border-radius: 15px;
+    border-radius: 7px;
     padding: 5px 10px;
 }
+section{
+    padding: 5% 0;
+    color: #555555;
+}
+section .sectionTitle{
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+section .sectionTitle h2{
+    font-weight: normal !important;
+    font-size: 25px !important;
+    margin:  10px 0 ;
+}
+section .sectionTitle::after{
+    content: '';
+    display: block;
+    width: 4%;
+    height: 3px;
+    background-color: #555555;
+    margin: 0 auto;
+}
+.Services{
+    text-align: center;
+}
+.Services .services .service{
+    width: 30%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2% !important;
+}
+.Services .services .service:last-child{
+    margin: 0 !important;
+}
+.services .service .img{
+    display: flex;
+    justify-content: center;
+}
+.services .service .img .shape{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #e41212;
+}
+.services .service .img .another{
+    background: #e41212;
+    color: #fff !important;
+}
+
+.Services .services .service .description{
+    font-size: 15px;
+}
+.Services .services{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: 4% !important;
+} 
+.services .service .title{
+    text-transform: uppercase;
+}
+
 
 
 @media screen and (max-width: 750px){
     .desktop{
         display: none;
+    }
+    section .sectionTitle::after{
+        width: 7%;
     }
     .burgBtn{
         display: block !important;
