@@ -7,6 +7,7 @@
 }
 a{
     text-decoration: none !important;
+    color: #ffffff;
 }
 html,body{
     width: 100%;
@@ -140,6 +141,7 @@ section .sectionTitle{
 section .description{
     font-size: 1.3em;
     text-align: center;
+    font-weight: bold;
 }
 section .sectionTitle h2{
     font-weight: normal !important;
@@ -184,6 +186,9 @@ section .sectionTitle::after{
 .services .title h3{
     font-size: 1.3em;
 }
+.Services .noBold{
+    font-weight: normal !important;
+}
 .services .service .img .another{
     background: #e41212;
     color: #fff !important;
@@ -227,8 +232,6 @@ section .sectionTitle::after{
 }
 .about .slider .slide{
     min-width: 150px;
-    height: 200px;
-    background: #000;
     margin-right: 2% !important;
 }
 .about .slider .slide img{
@@ -236,12 +239,54 @@ section .sectionTitle::after{
     height: 100%;
     object-fit: cover !important;
     object-position: top;
+    cursor: pointer;
 }
+.about .slider .slide img:hover ~ .cover1{
+    opacity: 1;
+}
+.about .slider .slide .group{
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+.about .slider .slide .group .cover1{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: rgba(0,0,0,.6);
+    transition: .4s all ease-in;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 0;
+    justify-content: center;
+
+}
+
 .about .slider .slide figure{
     width: 100%;
     height: 100%;
     margin: 0 !important;
+    text-align: center;
 }
+.about .slider .slide .positionInCompany{
+    font-weight: bold !important;
+    margin-top: 21px !important;
+    text-transform: none;
+    font-family: serif !important;
+}
+.about .slider .slide figcaption{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Open sans', sans-serif;
+    margin-top: 4% !important;
+    display: flex;
+    flex-direction: column;
+} 
 .about .slider .left, .about .slider .right{
     position: absolute;
     width: 30px;
@@ -266,10 +311,99 @@ section .sectionTitle::after{
     left: 2px;
 }
 .about .slider .right{
-   right: 2%;
+   right: 2.2%;
 }
 .about .slider i{
     margin: 0 !important;
+}
+.about  .social-networks{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.letestWorks .filtration{
+    display: flex;
+    justify-content: center;
+    margin-top: 2% !important;
+    flex-wrap: wrap;
+    font-weight: 500 !important;
+}
+.letestWorks .filtration li{
+    margin-left: 2% !important;
+    cursor: pointer;
+}
+.letestWorks .filtration li:hover{
+    color: #c0301c;
+}
+.letestWorks .filtration li:first-child{
+    margin-left: 0 !important;
+}
+.letestWorks .filtration{
+    font-size: 18px;
+}
+.letestWorks .worksWrap{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3%;
+}
+.letestWorks .wrapper{
+    height: 100%;
+}
+.letestWorks .worksWrap .workExample{
+    width: 22%;
+    height: 180px;
+    min-height: 80px;
+    min-width: 240px;
+    margin-bottom: 1% !important;
+    margin-left: 1%;
+    display: none;
+}
+.letestWorks .workExample .filter{
+    z-index: 2323;
+}
+.letestWorks .workExample img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+.letestWorks .workExample img:hover ~ .cover{
+    opacity: 1;
+}
+
+.letestWorks .hide{
+    display: none !important;
+}
+.show{
+    display: flex !important;
+    position: relative;
+    cursor: pointer;
+}
+.activeFilter{
+    color: #c0301c !important;
+}
+.letestWorks .cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(192, 48, 28, .7);
+    color: #ffffff;
+    display: flex;
+    pointer-events: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: .4s all ease-out;
+}
+.letestWorks .cover h4{
+    z-index: 200;
+    margin-bottom: 3%;
 }
 
 
@@ -307,6 +441,10 @@ section .sectionTitle::after{
     }
     .about .aboutTeam .col1, .about .aboutTeam .col2{
         width: 100%;
+        font-size: 1.5em !important;
+    }
+    .about .description{
+        font-size: 1.5em !important;
     }
     
 }
