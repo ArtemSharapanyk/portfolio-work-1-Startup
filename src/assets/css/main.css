@@ -406,9 +406,10 @@ section .sectionTitle::after{
     z-index: 200;
     margin-bottom: 3%;
 }
-.addYourWork .description{
+.addYourWork .description h6{
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.5em;
+    line-height: 1.5em !important;
+    font-size: 1em;
 }
 .addYourWork{
     background: url('/assets/img/addWorkBg.jpg') center center no-repeat;
@@ -487,8 +488,12 @@ section .sectionTitle::after{
     color: #555;
 }
 .ourPartners .desc{
+    margin-bottom: 4%;
+}
+.ourPartners .desc h6{
     font-size: 1.2em;
-    margin-bottom: 4% !important;
+    margin: 0 !important;
+    font-weight: normal;
 }
 .ourPartners .slider{
     width: 100%;
@@ -540,6 +545,98 @@ section .sectionTitle::after{
 .ourPartners .dotActive{
     background: red !important; 
 }
+.contact address{
+   width: 35%;
+}
+.contact .wrapp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact address .block{
+    margin-top: 20px;
+}
+.contact address .titleOf{
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+.contact address .mainInfo{
+    margin-top: 7px;
+}
+.contact address .mainInfo a {
+    color: #000000;
+}
+.contact form fieldset{
+    margin: 1% 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+.contact form  input{
+    width: 49%;
+    height: 40px;
+    padding-left: 1%;
+    cursor: pointer;
+    border: 1px solid #555 ;
+}
+.contact form fieldset input::placeholder, .contact form fieldset textarea::placeholder{
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .9em;
+}
+.contact form fieldset input:focus, .contact form fieldset textarea:focus{
+    border : 1px solid #c0301c;
+    outline: none;
+}
+.contact form fieldset textarea{
+    width: 100%;
+    resize: none;
+    height: 100px;
+    cursor: pointer;
+    padding: 1% 0 0 1%;
+    border: 1px solid #555;
+}
+
+.mr{
+    margin-right: 1.2%;
+}
+.contact form{
+    width: 70%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.contact form input[type="submit"]{
+    background: transparent !important;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .9em;
+    transition: .3s all ease-in-out;
+}
+.contact form input[type="submit"]:hover{
+    background: #000 !important;
+    color: #fff;
+}
+
+footer ul{
+    display: flex;
+    justify-content: center;
+    padding: 2% 0 !important;
+    color: #ffffff;
+}
+footer ul li{
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+footer ul li:first-child{
+    margin: 0;
+}
+footer{
+    padding: 2% 0;
+    background: #c0301c;
+}
 
 
 @keyframes Fade {
@@ -548,6 +645,24 @@ section .sectionTitle::after{
     }
     to{
         opacity: 1;
+    }
+}
+@media screen and (max-width: 900px){
+    .wrapp{
+        flex-direction: column !important;
+    }
+    address{
+        text-align: center;
+    }
+    form input{
+        width: 100% !important;
+        margin: 1% 0 !important;
+    }
+    form{
+        width: 100% !important;
+    }
+    form textarea{
+        width: 100% !important;
     }
 }
 @media screen and (max-width: 800px){
@@ -572,6 +687,9 @@ section .sectionTitle::after{
 @media screen and (max-width: 520px){
     header .information .title{
         font-size: .7em;
+    }
+    address{
+        width: 100% !important;
     }
     .slW520px{
         display: none;
