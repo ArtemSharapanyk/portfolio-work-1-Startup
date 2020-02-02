@@ -37,12 +37,27 @@ header {
     flex-direction: column;
 }
 header nav{
+    padding: 1% 0 !important;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 1;
+    transition: .5s all ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+header nav .wrap{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2% 0 !important;
-    font-family: 'Open Sans', sans-serif;
-    z-index: 1;
+    flex-direction: row;
+    width: 100%;
+}
+header .activeMenuOnScroll{
+    background: #000;
+}
+header nav .activeMenuLink{
+    color: #e41212;
 }
 header nav .brand{
     font-size: 30px;
@@ -104,7 +119,7 @@ header .burgBtn{
     padding-bottom: 0 !important;
 }
 header .information{
-    height: 80%;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
