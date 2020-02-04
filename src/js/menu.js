@@ -3,6 +3,7 @@ let menu = (menu, btn, activeClass, link, activeLinkClass, onScrollActive) => {
     let menuBtn        = document.querySelector(btn);
     let links          = document.querySelectorAll(link);
     let navigation     = document.querySelector('nav');
+    let anchors        = document.querySelectorAll('a[href*="#"]');
 
     menuBtn.addEventListener('click', () => {
         if(menuWrap.classList.contains(activeClass)) {
@@ -14,6 +15,7 @@ let menu = (menu, btn, activeClass, link, activeLinkClass, onScrollActive) => {
             menuBtn.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
         }
     });
+
     document.addEventListener('scroll', () => {
         let addActiveClassToMenuItemsOrRemove = (num) => {
             links.forEach((item) => item.classList.remove(activeLinkClass));
@@ -46,5 +48,21 @@ let menu = (menu, btn, activeClass, link, activeLinkClass, onScrollActive) => {
             }
         }
     });
+
+    for(let anchor of anchors) {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            menuWrap.classList.remove(activeClass);
+            menuBtn.innerHTML = '<i class="fa fa-bars" aria-hidden="true"></i>';
+            
+            let IdOfBlock = anchor.getAttribute('href');
+            document.querySelector(`${IdOfBlock}`).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+        });
+    }
 };
 module.exports = menu;
